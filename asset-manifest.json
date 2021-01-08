@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PyramidSolitaire/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/PyramidSolitaire/static/js/main.4780bc65.chunk.js",
+    "main.js.map": "/PyramidSolitaire/static/js/main.4780bc65.chunk.js.map",
+    "runtime-main.js": "/PyramidSolitaire/static/js/runtime-main.55a3b886.js",
+    "runtime-main.js.map": "/PyramidSolitaire/static/js/runtime-main.55a3b886.js.map",
+    "static/js/2.2ad053a4.chunk.js": "/PyramidSolitaire/static/js/2.2ad053a4.chunk.js",
+    "static/js/2.2ad053a4.chunk.js.map": "/PyramidSolitaire/static/js/2.2ad053a4.chunk.js.map",
+    "static/js/3.fef571fd.chunk.js": "/PyramidSolitaire/static/js/3.fef571fd.chunk.js",
+    "static/js/3.fef571fd.chunk.js.map": "/PyramidSolitaire/static/js/3.fef571fd.chunk.js.map",
+    "index.html": "/PyramidSolitaire/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/PyramidSolitaire/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.2ad053a4.chunk.js.LICENSE.txt": "/PyramidSolitaire/static/js/2.2ad053a4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55a3b886.js",
+    "static/js/2.2ad053a4.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.4780bc65.chunk.js"
+  ]
+}
