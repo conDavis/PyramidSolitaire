@@ -64,10 +64,10 @@ export class PyramidSolitaireVisualView {
 
         // win screen if the score of 0 is met
         if (this.score == 0) {
-            this.context.font = "25px Veranda"
+            this.context.font = "35px Veranda"
             this.context.fillText("You Won! ", 500, 175);
         } else {
-            this.context.font = "40px Veranda"
+            this.context.font = "25px Veranda"
             this.context.fillText("Score: " + this.score, 500, 175);
         }
         // renders each of the viewCards
