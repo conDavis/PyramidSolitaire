@@ -61,9 +61,14 @@ export class PyramidSolitaireVisualView {
         this.context.fillStyle = "#ffffff";
         this.context.fillText("Draws:", 30, 510);
 
+
         // win screen if the score of 0 is met
         if (this.score == 0) {
-            this.context.fillText("You Won! ", 300, 350);
+            this.context.font = "25px Veranda"
+            this.context.fillText("You Won! ", 500, 175);
+        } else {
+            this.context.font = "40px Veranda"
+            this.context.fillText("Score: " + this.score, 500, 175);
         }
         // renders each of the viewCards
         for (let index = 0 ; index < this.cards.length; index++) {
@@ -167,6 +172,7 @@ export class PyramidSolitaireVisualView {
             this.selectCard(e.pageX, e.pageY-pageOffset);
             this.refresh();
 
+
     }
 
     private actionListener(e: Event): void {
@@ -204,10 +210,11 @@ export class PyramidSolitaireVisualView {
                 if (card.getSelected()) {
                     this.selected--;
                     card.setSelected(!card.getSelected());
-                } else if (this.selected < 2) {
+                } else if (this.selected < 2 || card.getVisible()) {
                     this.selected++;
                     card.setSelected(!card.getSelected());
                 }
+
 
             }
         }

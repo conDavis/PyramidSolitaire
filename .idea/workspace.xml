@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cb53d11-4bd8-4e10-bbed-22aad011068c" name="Default Changelist" comment="" />
+    <list default="true" id="0cb53d11-4bd8-4e10-bbed-22aad011068c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AbstractPyramidSolitaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractPyramidSolitaire.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PyramidSolitaireVisualController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/PyramidSolitaireVisualController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PyramidSolitaireVisualView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/PyramidSolitaireVisualView.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1mZONo1kEJTiNxPq3q8Y6X1YzbK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,11 +48,25 @@
       <workItem from="1609956723481" duration="3221000" />
       <workItem from="1609960668531" duration="6102000" />
       <workItem from="1610136843559" duration="1495000" />
-      <workItem from="1610139392926" duration="311000" />
+      <workItem from="1610139392926" duration="4670000" />
+      <workItem from="1610164641091" duration="2354000" />
+      <workItem from="1610167162308" duration="96000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

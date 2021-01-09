@@ -359,13 +359,13 @@ import {GameState} from "./GameState";
 
         // iterates through the results and adds up the values
         let result: number = 0;
-        this.pyramid.forEach(function (row) {
-            row.forEach(function(card){
-                if(card != null) {
-                    result = result + card.getValue();
+        for (let row = 0 ; row < this.pyramid.length ; row++) {
+            for (let col = 0 ; col < this.pyramid[row].length; col++) {
+                if(this.pyramid[row][col] != null) {
+                    result = result + this.pyramid[row][col].getValue();
                 }
-            })
-        });
+            }
+        }
         return result;
     }
 
@@ -461,13 +461,14 @@ import {GameState} from "./GameState";
      */
     protected isGameWon(): boolean {
         // iterates over the cards in this game's pyramid and checks if any are not null
-        this.pyramid.forEach(function (row) {
-            row.forEach(function (card){
-                if (card != null) {
+
+        for (let row = 0 ; row < this.pyramid.length ; row++) {
+            for (let col = 0 ; col < this.pyramid[row].length; col++) {
+                if (this.pyramid[row][col] != null) {
                     return false;
                 }
-            })
-        })
+            }
+        }
         return true;
     }
 

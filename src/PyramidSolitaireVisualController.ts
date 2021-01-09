@@ -61,7 +61,6 @@ export class PyramidSolitaireVisualController {
         this.view.refresh();
 
 
-
     }
 
     /**
@@ -96,6 +95,7 @@ export class PyramidSolitaireVisualController {
             // deselects the cards if they are an invalid pairing (2 draw cards)
             this.view.deselect(cardPositions);
         }
+        // updates the score and refreshes the view
         this.view.updateScore(this.model.getScore());
         this.view.refresh();
     }
