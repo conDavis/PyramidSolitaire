@@ -13,6 +13,7 @@ export class PyramidSolitaireVisualView {
     private canvas: HTMLCanvasElement;
     private readonly context: CanvasRenderingContext2D;
     selected: number;
+    drawsSelected: number;
     private score: number;
     private readonly cards: Array<ViewCard>;
      manager = this;
@@ -22,20 +23,18 @@ export class PyramidSolitaireVisualView {
      */
     constructor(canvas: HTMLElement, removeButton: HTMLElement, rulesButton: HTMLElement) {
         this.selected = 0;
+        this.drawsSelected = 0;
         this.score = 0;
         this.canvas = <HTMLCanvasElement> canvas;
         this.cards = new Array<ViewCard>();
-        const canvas2: HTMLCanvasElement = <HTMLCanvasElement> canvas; // FIX THIS GROSSNESS
+        const canvas2: HTMLCanvasElement = <HTMLCanvasElement> canvas;
         const ctx = canvas2.getContext("2d");
         this.context = ctx;
+        // adding click action listener
         canvas.addEventListener('click', this.mouseListener.bind(this), false);
-        // add button action listeners ?? -- may have to take in these buttons from the main file
-        removeButton.addEventListener('click', this.actionListener.bind(this), false);
-
-
-        //sets the font for the canvas
-        canvas.style.fontSize = "large";
-
+        // adds button action listeners
+        removeButton.addEventListener('click', this.removeButtonActionListener.bind(this), false);
+        rulesButton.addEventListener('click', this.rulesButtonActionListener, false);
 
     }
 
@@ -59,14 +58,14 @@ export class PyramidSolitaireVisualView {
 
         // draws the score and draws labels
         this.context.fillStyle = "#ffffff";
-        this.context.fillText("Draws:", 30, 510);
+        this.context.fillText("Draws:", 25, 500);
 
 
         // win screen if the score of 0 is met
         if (this.score == 0) {
             this.context.font = "35px Veranda"
             this.context.fillText("You Won! ", 500, 175);
-        } else {
+        } else { // if the game is not won
             this.context.font = "25px Veranda"
             this.context.fillText("Score: " + this.score, 500, 175);
         }
@@ -144,11 +143,6 @@ export class PyramidSolitaireVisualView {
         }
     }
 
-    makeBlack(): void {
-        this.context.fillStyle = "#000000";
-        this.context.fillRect(0, 0, 700, 800);
-    }
-
 
     printMessage(message: String): void {
         this.context.fillStyle = "#020101";
@@ -175,11 +169,33 @@ export class PyramidSolitaireVisualView {
 
     }
 
-    private actionListener(e: Event): void {
+    /**
+     * Handles action events for the remove selected button of this view.
+     * @param e the action event.
+     */
+    private removeButtonActionListener(e: Event): void {
         this.controller.removeSelected(this.getSelectedCards());
         this.resetSelected();
     }
 
+    /**
+     * Handles action events for the rules button of this view.
+     * @param e the action event.
+     */
+    private rulesButtonActionListener(e: Event): void {
+        alert("The goal of a game of pyramid solitaire is to clear " +
+            "the pyramid by removing the cards one or two at a time.\n To remove a card or pair of " +
+            "cards the value(s) of the card(s) must sum to 13.\n You may use draw cards paired with " +
+            "pyramid cards, or discard any draw card and it will be replaced by the next in the deck.  \n" +
+            " The score represents the sum of the " +
+            "values of the cards in the pyramid, so the goal, like in golf, " +
+            "is to get the lowest score possible.\n A score of zero wins the game.");
+    }
+
+    /**
+     * Returns the positions of the cards in this panel that have been selected by the user.
+     * @return an array of the positions of the selected cards in this panel.
+     */
     private getSelectedCards(): Array<Pos2D> {
         let pyramidPositions: Array<Pos2D> = new Array<Pos2D>();
         // iterates over all the viewCards and adds the selected ones to the result
@@ -191,14 +207,21 @@ export class PyramidSolitaireVisualView {
         return pyramidPositions;
     }
 
+    /**
+     * Sets this view's selected and drawsSelected field back to zero.
+     */
     private resetSelected(): void {
         this.selected = 0;
+        this.drawsSelected = 0;
     }
 
 
-    
-
-    
+    /**
+     * Selects the card containing the given x and y positions on the screen, if there is no card with the given
+     * position, does nothing.
+     * @param screenX the x position on the screen of the card we are selecting
+     * @param screenY the y position on the screen of the card we are selecting
+     */
     selectCard(x: number, y: number): void {
         for (let index = 0 ; index < this.cards.length ; index ++) {
             let card: ViewCard = this.cards[index];
@@ -207,11 +230,20 @@ export class PyramidSolitaireVisualView {
                 y > card.getScreenPosition().getY() && y < card.getScreenPosition().getY() + 70 - 10
                && this.notCovered(card.getPyramidPosition(), card.isDrawCardCheck())) {
                 // toggles the card selected status
-                if (card.getSelected()) {
+                if (card.getSelected()) { // if the card is already selected
                     this.selected--;
+                    if (card.isDrawCardCheck()) {
+                        this.drawsSelected--;
+                    }
                     card.setSelected(!card.getSelected());
-                } else if (this.selected < 2 || card.getVisible()) {
+                } else if ( // if the card is not selected
+                    (this.selected < 2  && card.getVisible()) && //the card is valid and less than 2 cards are selected
+                    ((!card.isDrawCardCheck()) || // the card is not a draw
+                    (card.isDrawCardCheck() && this.drawsSelected < 1 ))) { // the card is a draw and can be selected
                     this.selected++;
+                    if (card.isDrawCardCheck()) {
+                        this.drawsSelected++;
+                    }
                     card.setSelected(!card.getSelected());
                 }
 
@@ -219,7 +251,13 @@ export class PyramidSolitaireVisualView {
             }
         }
     }
-    
+
+    /**
+     * Gets the card containing the given x and y positions on the screen, returns null if there is none.
+     * @param screenX the x position on the screen of the card we are getting
+     * @param screenY the y position on the screen of the card we are getting
+     * @return the card in this panel containing given position on the screen
+     */
     getCard(x: number, y: number): ViewCard {
         this.cards.forEach(function (card) {
             // checks if the card contains the given x, y coordinates

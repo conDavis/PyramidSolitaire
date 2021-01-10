@@ -125,7 +125,7 @@ export class PyramidSolitaireVisualController {
      */
     private createDrawViewCard(label: String, index: number): ViewCard {
         return new ViewCard(new Pos2D(index * (this.CARD_WIDTH + 5) + 20,
-            525), new Pos2D(index, -1), <string>label, true);
+            515), new Pos2D(index, -1), <string>label, true);
     }
 
     /**
