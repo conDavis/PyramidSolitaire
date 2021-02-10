@@ -56,9 +56,13 @@ export class PyramidSolitaireVisualView {
         this.context.fillStyle = "#0b8327";
         this.context.fillRect(0, 0, 700, 800); // make the width and height constants
 
-        // draws the score and draws labels
+        // draws the score and draws labels and suit value labels
         this.context.fillStyle = "#ffffff";
         this.context.fillText("Draws:", 25, 500);
+        this.context.fillText("Suit Values:", 25, 175);
+        this.context.fillText(" K - 13", 25, 200);
+        this.context.fillText(" Q - 12", 25, 225);
+        this.context.fillText("  J - 11", 25, 250);
 
 
         // win screen if the score of 0 is met
@@ -185,7 +189,9 @@ export class PyramidSolitaireVisualView {
     private rulesButtonActionListener(e: Event): void {
         alert("The goal of a game of pyramid solitaire is to clear " +
             "the pyramid by removing the cards one or two at a time.\n To remove a card or pair of " +
-            "cards the value(s) of the card(s) must sum to 13.\n You may use draw cards paired with " +
+            "cards the value(s) of the card(s) must sum to 13. " +
+            "\n You may only remove cards that are not covered, meaning the two spots below the card are" +
+            " empty. \n You may use draw cards paired with " +
             "pyramid cards, or discard any draw card and it will be replaced by the next in the deck.  \n" +
             " The score represents the sum of the " +
             "values of the cards in the pyramid, so the goal, like in golf, " +

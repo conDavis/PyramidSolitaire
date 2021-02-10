@@ -4,7 +4,6 @@
     <list default="true" id="0cb53d11-4bd8-4e10-bbed-22aad011068c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PyramidSolitaireVisualController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/PyramidSolitaireVisualController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PyramidSolitaireVisualView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/PyramidSolitaireVisualView.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +50,9 @@
       <workItem from="1610164641091" duration="2354000" />
       <workItem from="1610167162308" duration="1085000" />
       <workItem from="1610234604962" duration="5127000" />
+      <workItem from="1610241535980" duration="506000" />
+      <workItem from="1612928778641" duration="1783000" />
+      <workItem from="1612931054320" duration="451000" />
     </task>
     <servers />
   </component>
