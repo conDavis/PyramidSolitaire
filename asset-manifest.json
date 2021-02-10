@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PyramidSolitaire/static/css/main.ab7136cd.chunk.css",
-    "main.js": "/PyramidSolitaire/static/js/main.d5559168.chunk.js",
-    "main.js.map": "/PyramidSolitaire/static/js/main.d5559168.chunk.js.map",
+    "main.js": "/PyramidSolitaire/static/js/main.af03fd0d.chunk.js",
+    "main.js.map": "/PyramidSolitaire/static/js/main.af03fd0d.chunk.js.map",
     "runtime-main.js": "/PyramidSolitaire/static/js/runtime-main.55a3b886.js",
     "runtime-main.js.map": "/PyramidSolitaire/static/js/runtime-main.55a3b886.js.map",
     "static/js/2.2ad053a4.chunk.js": "/PyramidSolitaire/static/js/2.2ad053a4.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.55a3b886.js",
     "static/js/2.2ad053a4.chunk.js",
     "static/css/main.ab7136cd.chunk.css",
-    "static/js/main.d5559168.chunk.js"
+    "static/js/main.af03fd0d.chunk.js"
   ]
 }
